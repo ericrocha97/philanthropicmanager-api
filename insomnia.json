@@ -1,0 +1,170 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-01-25T02:21:34.191Z",
+  "__export_source": "insomnia.desktop.app:v2021.7.2",
+  "resources": [
+    {
+      "_id": "req_8bae47222ab8443c8cf80c0652900398",
+      "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "modified": 1643077139131,
+      "created": 1643076958820,
+      "url": "{{ _.base_URL }}/user",
+      "name": "Create User",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": " {\n    \"username\": \"ericrocha97\",\n    \"password\": \"123456\",\n    \"memberId\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\t\n    \"admin\": true\n  }"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_22a01caf2a5c4bed854a7db14fce6c4a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1643076753455,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1643076740220,
+      "created": 1643076740220,
+      "name": "Member",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1643076740220,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "parentId": null,
+      "modified": 1642826768466,
+      "created": 1642826768466,
+      "name": "philanthropicmanager-api",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_7b932cc249ba4b88b7248116a4a45990",
+      "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "modified": 1643077136170,
+      "created": 1643076753405,
+      "url": "{{ _.base_URL }}/member",
+      "name": "Create Member",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Eric Rocha\",\n\t\"CID\": \"123456789\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5de473cb300b4a84b3517fa493c51b9d"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1643076753405,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_19154e4a95124a15828a45899b4275bb",
+      "parentId": "fld_48e1e44834fa439186f78ee492268642",
+      "modified": 1643076757479,
+      "created": 1642826805732,
+      "url": "{{ _.base_URL }}/philanthropy",
+      "name": "Create Philanthropy",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"local\": \"Lar dos Idosos, Rua João de Barros, Nº: 5\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"philanthropy\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5056fbc237224531b5990b826fc2aec2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1642826805732,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_48e1e44834fa439186f78ee492268642",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1642826779213,
+      "created": 1642826779213,
+      "name": "Calendar",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1642826779213,
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1642826839338,
+      "created": 1642826768485,
+      "name": "Base Environment",
+      "data": { "base_URL": "http://localhost:3000" },
+      "dataPropertyOrder": { "&": ["base_URL"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1642826768485,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1642826768491,
+      "created": 1642826768491,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_9c16d84a7f174a229d1a104a81d35a92",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1642826768471,
+      "created": 1642826768471,
+      "fileName": "philanthropicmanager-api",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
