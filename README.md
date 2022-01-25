@@ -23,6 +23,13 @@ yarn install
 yarn dev
 ```
 
+## Insomnia Requests
+<br>
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=philanthropicmanager-api&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fericrocha97%2Fphilanthropicmanager-api%2Fmaster%2Finsomnia.json)
+
+<br>
+
 ## Author
 
 👤 **ericrocha97**
