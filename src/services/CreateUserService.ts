@@ -6,16 +6,16 @@ import { User } from "../entities/User";
 interface IUserRequest {
   username: string;
   password: string;
-  memberId: string;
+  CID: string;
   admin?: boolean;
 }
 
 class CreateUserService {
-  async execute({ username, password, memberId, admin }: IUserRequest) {
+  async execute({ username, password, CID, admin }: IUserRequest) {
     const userRepository = getRepository(User);
     const memberRepository = getRepository(Member);
 
-    if (!username || !password || !memberId) {
+    if (!username || !password || !CID) {
       throw new Error("Fill all fields");
     }
 
@@ -28,12 +28,15 @@ class CreateUserService {
     }
 
     const memberExists = await memberRepository.findOne({
-      id: memberId,
+      CID: CID,
     });
+
 
     if (!memberExists) {
       throw new Error("Member not found");
-    }
+    } 
+
+    const memberId = memberExists?.id;
 
     const passwordHash = await hash(password, 8);
 

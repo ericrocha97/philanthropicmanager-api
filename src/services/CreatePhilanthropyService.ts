@@ -24,7 +24,7 @@ class CreatePhilanthropyService {
     }
 
     /**
-     * this code is for suport the type of the date in sqlite
+     * this code is for support the type of the date in sqlite
      */
     const dateFormated = new Date(date);
     const dateText = dateFormated.toISOString();
