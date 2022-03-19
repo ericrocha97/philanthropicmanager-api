@@ -1,30 +1,42 @@
-import { getCustomRepository } from "typeorm";
+import { getCustomRepository, getRepository } from "typeorm";
+import { Member } from "../entities/Member";
 import { CalendarRepositories } from "../repositories/CalendarRepositories";
 
-interface IPhilanthropyRequest {
+interface IWorkRequest {
   title: string;
   description: string;
-  local: string;
+  member: string;
   date: Date;
   type: string;
 }
 
-class CreatePhilanthropyService {
+class CreateWorkService {
   async execute({
     title,
     description,
-    local,
+    member,
     date,
     type,
-  }: IPhilanthropyRequest) {
+  }: IWorkRequest) {
     const calendarRepository = getCustomRepository(CalendarRepositories);
+    const memberRepository = getRepository(Member);
 
-    if (!title || !description || !local || !date || !type) {
+
+    if (!title || !description || !member || !date || !type) {
       throw new Error("Fill all fields");
     }
 
-    if (type != "philanthropy") {
-      throw new Error("Philanthropy type incorrect");
+    const memberExists = await memberRepository.findOne({
+      id: member,
+    });
+
+
+    if (!memberExists) {
+      throw new Error("Member not found");
+    } 
+
+    if(type != "work"){
+      throw new Error("Work type incorrect");
     }
 
     /**
@@ -37,26 +49,26 @@ class CreatePhilanthropyService {
     const calendarAlreadyExists = await calendarRepository.findOne({
       title,
       date: dateTextFormatted,
-      extra: local,
+      extra: member,
       type,
     });
 
     if (calendarAlreadyExists) {
-      throw new Error("Philanthropy already exists");
+      throw new Error("Work already exists");
     }
 
-    const philanthropy = calendarRepository.create({
+    const work = calendarRepository.create({
       title,
       description,
-      extra: local,
+      extra: member,
       date,
       type,
     });
 
-    await calendarRepository.save(philanthropy);
+    await calendarRepository.save(work);
 
-    return philanthropy;
+    return work;
   }
 }
 
-export { CreatePhilanthropyService };
+export { CreateWorkService };

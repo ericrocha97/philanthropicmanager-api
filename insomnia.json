@@ -1,13 +1,67 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2022-01-25T02:21:34.191Z",
-  "__export_source": "insomnia.desktop.app:v2021.7.2",
+  "__export_date": "2022-03-19T08:01:37.893Z",
+  "__export_source": "insomnia.desktop.app:v2022.2.0",
   "resources": [
+    {
+      "_id": "req_8679b9332d42466098b84cc8ad0b969c",
+      "parentId": "fld_0b13a53c6e3a42bb88299431a4adea2f",
+      "modified": 1647676879136,
+      "created": 1647676185219,
+      "url": "{{ _.base_URL }}/entity-preferences",
+      "name": "Create Entity Preferences",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"administration\": \"1/2021\",\n\t\"leader1\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"leader2\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"leader3\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"treasurer\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"clerk\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"president_work\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"president_philanthropy\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_e6e9c9a97673409aa50b63f7732aae98"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1647676185219,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_0b13a53c6e3a42bb88299431a4adea2f",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1647676164969,
+      "created": 1647676164969,
+      "name": "Entity Preferences",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1647676164969,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "parentId": null,
+      "modified": 1642826768466,
+      "created": 1642826768466,
+      "name": "philanthropicmanager-api",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
     {
       "_id": "req_8bae47222ab8443c8cf80c0652900398",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1643077139131,
+      "modified": 1647672857848,
       "created": 1643076958820,
       "url": "{{ _.base_URL }}/user",
       "name": "Create User",
@@ -15,7 +69,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": " {\n    \"username\": \"ericrocha97\",\n    \"password\": \"123456\",\n    \"memberId\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\t\n    \"admin\": true\n  }"
+        "text": " {\n    \"username\": \"ericrocha97\",\n    \"password\": \"123456\",\n    \"CID\": \"1234567898\",\t\n    \"admin\": false\n  }"
       },
       "parameters": [],
       "headers": [
@@ -49,19 +103,9 @@
       "_type": "request_group"
     },
     {
-      "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "parentId": null,
-      "modified": 1642826768466,
-      "created": 1642826768466,
-      "name": "philanthropicmanager-api",
-      "description": "",
-      "scope": "collection",
-      "_type": "workspace"
-    },
-    {
       "_id": "req_7b932cc249ba4b88b7248116a4a45990",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1643077136170,
+      "modified": 1647672914764,
       "created": 1643076753405,
       "url": "{{ _.base_URL }}/member",
       "name": "Create Member",
@@ -69,7 +113,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"Eric Rocha\",\n\t\"CID\": \"123456789\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
+        "text": "{\n\t\"name\": \"Eric Rocha\",\n\t\"CID\": \"1234567898\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
       },
       "parameters": [],
       "headers": [
@@ -93,7 +137,7 @@
     {
       "_id": "req_19154e4a95124a15828a45899b4275bb",
       "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1643076757479,
+      "modified": 1647673003087,
       "created": 1642826805732,
       "url": "{{ _.base_URL }}/philanthropy",
       "name": "Create Philanthropy",
@@ -125,13 +169,89 @@
     {
       "_id": "fld_48e1e44834fa439186f78ee492268642",
       "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "modified": 1642826779213,
+      "modified": 1647673011836,
       "created": 1642826779213,
       "name": "Calendar",
       "description": "",
       "environment": {},
       "environmentPropertyOrder": null,
-      "metaSortKey": -1642826779213,
+      "metaSortKey": -1643014249968.25,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_314bd75fb8864cee90f34433cde6a0a4",
+      "parentId": "fld_48e1e44834fa439186f78ee492268642",
+      "modified": 1647673039801,
+      "created": 1647672842701,
+      "url": "{{ _.base_URL }}/work",
+      "name": "Create Work",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"member\": \"88f3aacf-bc45-47d1-8523-b5ed9edb7fe5\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"work\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5056fbc237224531b5990b826fc2aec2"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1636757004725.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_08cb441357314996b25a13abfff86afa",
+      "parentId": "fld_d36a19d92bd84fed984d0916820fec10",
+      "modified": 1647673355783,
+      "created": 1647672977100,
+      "url": "{{ _.base_URL }}/financial-entries",
+      "name": "Create Financial Entries",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"description\": \"Primeira Compra\",\n\t\"type\": \"debit\",\n\t\"date\": \"01/31/2022\",\n\t\"value\": 150.87\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c671333ea6d64274b0dba410946475ed"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1647672977100,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_d36a19d92bd84fed984d0916820fec10",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1647673007386,
+      "created": 1647672956802,
+      "name": "Financial Entries",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1642951759716.5,
       "_type": "request_group"
     },
     {
