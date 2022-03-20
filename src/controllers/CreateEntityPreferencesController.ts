@@ -12,6 +12,7 @@ class CreateEntityPreferencesController {
       clerk,
       president_work,
       president_philanthropy,
+      current
     } = request.body;
 
     const createEntityPreferencesService = new CreateEntityPreferencesService();
@@ -25,9 +26,10 @@ class CreateEntityPreferencesController {
       clerk,
       president_work,
       president_philanthropy,
+      current
     });
 
-    return response.json(philanthropy);
+    return response.json(philanthropy)
   }
 }
 

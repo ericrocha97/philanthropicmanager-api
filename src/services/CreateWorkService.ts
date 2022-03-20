@@ -11,16 +11,9 @@ interface IWorkRequest {
 }
 
 class CreateWorkService {
-  async execute({
-    title,
-    description,
-    member,
-    date,
-    type,
-  }: IWorkRequest) {
+  async execute({ title, description, member, date, type }: IWorkRequest) {
     const calendarRepository = getCustomRepository(CalendarRepositories);
     const memberRepository = getRepository(Member);
-
 
     if (!title || !description || !member || !date || !type) {
       throw new Error("Fill all fields");
@@ -30,12 +23,11 @@ class CreateWorkService {
       id: member,
     });
 
-
     if (!memberExists) {
       throw new Error("Member not found");
-    } 
+    }
 
-    if(type != "work"){
+    if (type != "work") {
       throw new Error("Work type incorrect");
     }
 

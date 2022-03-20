@@ -1,6 +1,6 @@
-import { getCustomRepository, getRepository } from "typeorm";
-import { Member } from "../entities/Member";
-import { EntityPreferencesRepositories } from "../repositories/EntityPreferencesRepositories";
+import { getCustomRepository, getRepository } from 'typeorm';
+import { Member } from '../entities/Member';
+import { EntityPreferencesRepositories } from '../repositories/EntityPreferencesRepositories';
 
 interface IEntityPreferencesRequest {
   administration: string;
@@ -11,6 +11,7 @@ interface IEntityPreferencesRequest {
   clerk: string;
   president_work: string;
   president_philanthropy: string;
+  current: boolean;
 }
 
 class CreateEntityPreferencesService {
@@ -23,77 +24,77 @@ class CreateEntityPreferencesService {
     clerk,
     president_work,
     president_philanthropy,
+    current
   }: IEntityPreferencesRequest) {
     const entityPreferencesRepository = getCustomRepository(
-      EntityPreferencesRepositories
+      EntityPreferencesRepositories,
     );
 
     if (
-      !administration ||
-      !leader1 ||
-      !leader2 ||
-      !leader3 ||
-      !treasurer ||
-      !clerk ||
-      !president_work ||
-      !president_philanthropy
+      !administration
+      || !leader1
+      || !leader2
+      || !leader3
+      || !treasurer
+      || !clerk
+      || !president_work
+      || !president_philanthropy
     ) {
-      throw new Error("Fill all fields");
+      throw new Error('Fill all fields');
     }
 
-    const regexValidatorAdminstration = new RegExp(`^[1-2]/\[0-9]{4}$`);
+    const regexValidatorAdminstration = new RegExp('^[1-2]/\[0-9]{4}$');
     if (!regexValidatorAdminstration.test(administration)) {
-      throw new Error("Invalid administration");
+      throw new Error('Invalid administration');
     }
 
-    const administrationAlreadyExists =
-      await entityPreferencesRepository.findOne({
-        administration,
-      });
+    const administrationAlreadyExists = await entityPreferencesRepository.findOne({
+      administration,
+    });
 
     if (administrationAlreadyExists) {
-      //throw new Error("Administration already exists");
-      console.log("Administration already exists");
-      //deve liberar o update dos demais campos
+      // throw new Error("Administration already exists");
+      console.log('Administration already exists');
+      // deve liberar o update dos demais campos
     }
 
-    const entityPreferencesAlreadyExists =
-      await entityPreferencesRepository.findOne({
-        administration,
-        leader1,
-        leader2,
-        leader3,
-        treasurer,
-        clerk,
-        president_work,
-        president_philanthropy,
-      });
+    const entityPreferencesAlreadyExists = await entityPreferencesRepository.findOne({
+      administration,
+      leader1,
+      leader2,
+      leader3,
+      treasurer,
+      clerk,
+      president_work,
+      president_philanthropy,
+      current,
+    });
 
     if (entityPreferencesAlreadyExists) {
-      //throw new Error("Entity Preferences already exists");
-      console.log("Entity Preferences already exists");
-      //nao deve fazer nada, pois o usuário não alterou nenhuma informação
+      // throw new Error("Entity Preferences already exists");
+      console.log('Entity Preferences already exists');
+      // nao deve fazer nada, pois o usuário não alterou nenhuma informação
     }
 
     /**
      * validação de membros
      */
 
-    const leader1Member = await this.verifyMemberIsValid(leader1, "leader1");
-    const leader2Member = await this.verifyMemberIsValid(leader2, "leader2");
-    const leader3Member = await this.verifyMemberIsValid(leader3, "leader3");
+    const leader1Member = await this.verifyMemberIsValid(leader1, 'leader1');
+    const leader2Member = await this.verifyMemberIsValid(leader2, 'leader2');
+    const leader3Member = await this.verifyMemberIsValid(leader3, 'leader3');
     const treasurerMember = await this.verifyMemberIsValid(
       treasurer,
-      "treasurer"
+      'treasurer',
     );
-    const clerkMember = await this.verifyMemberIsValid(clerk, "clerk");
+    const clerkMember = await this.verifyMemberIsValid(clerk, 'clerk');
     const presidentWorkMember = await this.verifyMemberIsValid(
       president_work,
-      "president_work"
+      'president_work',
     );
     const presidentPhilanthropyMember = await this.verifyMemberIsValid(
       president_philanthropy,
-      "president_philanthropy"
+      'president_philanthropy',
     );
 
     const entityPreferences = entityPreferencesRepository.create({
@@ -105,6 +106,7 @@ class CreateEntityPreferencesService {
       clerk: clerkMember.id,
       president_work: presidentWorkMember.id,
       president_philanthropy: presidentPhilanthropyMember.id,
+      current
     });
 
     await entityPreferencesRepository.save(entityPreferences);

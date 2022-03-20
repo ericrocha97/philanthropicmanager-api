@@ -1,13 +1,67 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2022-03-19T08:01:37.893Z",
+  "__export_date": "2022-03-20T07:49:25.007Z",
   "__export_source": "insomnia.desktop.app:v2022.2.0",
   "resources": [
     {
+      "_id": "req_30f5f8cd259844daa9e24289e4d2079f",
+      "parentId": "fld_4c799d5da7624577a001647a316cf7b7",
+      "modified": 1647762130159,
+      "created": 1647758670644,
+      "url": "{{ _.base_URL }}/login",
+      "name": "Generate Token",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"username\": \"ericrocha97\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_a1be87b0c62145638773d0fa56cdd931"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1647758670644,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_4c799d5da7624577a001647a316cf7b7",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1647758615295,
+      "created": 1647758615295,
+      "name": "Authenticate User",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1647758615295,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "parentId": null,
+      "modified": 1642826768466,
+      "created": 1642826768466,
+      "name": "philanthropicmanager-api",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
       "_id": "req_8679b9332d42466098b84cc8ad0b969c",
       "parentId": "fld_0b13a53c6e3a42bb88299431a4adea2f",
-      "modified": 1647676879136,
+      "modified": 1647762125586,
       "created": 1647676185219,
       "url": "{{ _.base_URL }}/entity-preferences",
       "name": "Create Entity Preferences",
@@ -15,7 +69,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"administration\": \"1/2021\",\n\t\"leader1\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"leader2\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"leader3\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"treasurer\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"clerk\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"president_work\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\",\n\t\"president_philanthropy\": \"9d495445-b8ce-4433-a54e-14ad46cac28f\"\n}"
+        "text": "{\n\t\"administration\": \"2/2022\",\n\t\"leader1\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"leader2\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"leader3\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"treasurer\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"clerk\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"president_work\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"president_philanthropy\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"current\": false\n}"
       },
       "parameters": [],
       "headers": [
@@ -49,27 +103,17 @@
       "_type": "request_group"
     },
     {
-      "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "parentId": null,
-      "modified": 1642826768466,
-      "created": 1642826768466,
-      "name": "philanthropicmanager-api",
-      "description": "",
-      "scope": "collection",
-      "_type": "workspace"
-    },
-    {
       "_id": "req_8bae47222ab8443c8cf80c0652900398",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1647672857848,
+      "modified": 1647761917492,
       "created": 1643076958820,
-      "url": "{{ _.base_URL }}/user",
+      "url": "{{ _.base_URL }}/users",
       "name": "Create User",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": " {\n    \"username\": \"ericrocha97\",\n    \"password\": \"123456\",\n    \"CID\": \"1234567898\",\t\n    \"admin\": false\n  }"
+        "text": " {\n    \"username\": \"ericmrocha97\",\n    \"password\": \"123456\",\n    \"CID\": \"123456789868\",\t\n    \"admin\": false\n  }"
       },
       "parameters": [],
       "headers": [
@@ -105,15 +149,15 @@
     {
       "_id": "req_7b932cc249ba4b88b7248116a4a45990",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1647672914764,
+      "modified": 1647762151348,
       "created": 1643076753405,
-      "url": "{{ _.base_URL }}/member",
+      "url": "{{ _.base_URL }}/members",
       "name": "Create Member",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"Eric Rocha\",\n\t\"CID\": \"1234567898\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
+        "text": "{\n\t\"name\": \"Eric M Rocha\",\n\t\"CID\": \"123456789868\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
       },
       "parameters": [],
       "headers": [
@@ -137,9 +181,9 @@
     {
       "_id": "req_19154e4a95124a15828a45899b4275bb",
       "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1647673003087,
+      "modified": 1647762136824,
       "created": 1642826805732,
-      "url": "{{ _.base_URL }}/philanthropy",
+      "url": "{{ _.base_URL }}/philanthropies",
       "name": "Create Philanthropy",
       "description": "",
       "method": "POST",
@@ -181,15 +225,15 @@
     {
       "_id": "req_314bd75fb8864cee90f34433cde6a0a4",
       "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1647673039801,
+      "modified": 1647762207758,
       "created": 1647672842701,
-      "url": "{{ _.base_URL }}/work",
+      "url": "{{ _.base_URL }}/works",
       "name": "Create Work",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"member\": \"88f3aacf-bc45-47d1-8523-b5ed9edb7fe5\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"work\"\n}"
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"member\": \"ae101439-45fd-4273-9de3-f98cc1ab0778\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"work\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -213,7 +257,7 @@
     {
       "_id": "req_08cb441357314996b25a13abfff86afa",
       "parentId": "fld_d36a19d92bd84fed984d0916820fec10",
-      "modified": 1647673355783,
+      "modified": 1647762183775,
       "created": 1647672977100,
       "url": "{{ _.base_URL }}/financial-entries",
       "name": "Create Financial Entries",
@@ -221,7 +265,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"description\": \"Primeira Compra\",\n\t\"type\": \"debit\",\n\t\"date\": \"01/31/2022\",\n\t\"value\": 150.87\n}"
+        "text": "{\n\t\"description\": \"Primeira Compra2\",\n\t\"type\": \"credit\",\n\t\"date\": \"01/31/2022\",\n\t\"value\": 150.87\n}"
       },
       "parameters": [],
       "headers": [
@@ -257,11 +301,19 @@
     {
       "_id": "env_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
       "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "modified": 1642826839338,
+      "modified": 1647759003668,
       "created": 1642826768485,
       "name": "Base Environment",
-      "data": { "base_URL": "http://localhost:3000" },
-      "dataPropertyOrder": { "&": ["base_URL"] },
+      "data": {
+        "base_URL": "http://localhost:3000",
+        "token": "{% response 'body', 'req_30f5f8cd259844daa9e24289e4d2079f', 'b64::JC50b2tlbg==::46b', 'when-expired', 85999 %}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_URL",
+          "token"
+        ]
+      },
       "color": null,
       "isPrivate": false,
       "metaSortKey": 1642826768485,

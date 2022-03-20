@@ -14,22 +14,27 @@ export class CreateCalendar1642821111355 implements MigrationInterface {
           {
             name: "title",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "extra",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "date",
             type: "date",
+            isNullable: false,
           },
           {
             name: "description",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "type",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "created_at",

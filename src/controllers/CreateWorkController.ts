@@ -15,7 +15,7 @@ class CreateWorkController {
       type,
     });
 
-    return response.json(work);
+    return response.json(work)
   }
 }
 

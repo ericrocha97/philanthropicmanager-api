@@ -27,6 +27,11 @@ export class CreateUser1643072877675 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: "admin",
+            type: "boolean",
+            isNullable: false,
+          },
+          {
             name: "created_at",
             type: "timestamp",
             default: "now()",
@@ -39,6 +44,7 @@ export class CreateUser1643072877675 implements MigrationInterface {
         ],
         foreignKeys: [
           {
+            name: "FKMemberUser",
             columnNames: ["memberId"],
             referencedTableName: "member",
             referencedColumnNames: ["id"],

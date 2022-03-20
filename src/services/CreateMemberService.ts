@@ -1,5 +1,5 @@
-import { getRepository } from "typeorm";
-import { Member } from "../entities/Member";
+import { getRepository } from 'typeorm';
+import { Member } from '../entities/Member';
 
 interface IMemberRequest {
   name: string;
@@ -24,14 +24,14 @@ class CreateMemberService {
     const memberRepository = getRepository(Member);
 
     if (!name || !CID || !address || !CEP || !phone || !birthday || !level) {
-      throw new Error("Fill all fields");
+      throw new Error('Fill all fields');
     }
     const memberAlreadyExists = await memberRepository.findOne({
       CID,
     });
 
     if (memberAlreadyExists) {
-      throw new Error("Member already exists");
+      throw new Error('Member already exists');
     }
 
     const member = memberRepository.create({

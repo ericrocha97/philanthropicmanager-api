@@ -34,7 +34,7 @@ class CreateUserService {
 
     if (!memberExists) {
       throw new Error("Member not found");
-    } 
+    }
 
     const memberId = memberExists?.id;
 

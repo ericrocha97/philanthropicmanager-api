@@ -14,18 +14,22 @@ export class CreateFinancialEntries1647671341944 implements MigrationInterface {
           {
             name: "description",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "type",
             type: "varchar",
+            isNullable: false,
           },
           {
             name: "date",
             type: "date",
+            isNullable: false,
           },
           {
             name: "value",
             type: "decimal",
+            isNullable: false,
           },
           {
             name: "created_at",

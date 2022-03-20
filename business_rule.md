@@ -59,6 +59,7 @@
   - [ ] Deve ser possível alterar qualquer membro de qualquer cargo
   - [x] Ao alterar o período de administração deve ser gravado em um novo registro
   - [ ] Deve ser possível listar as preferencias por período de administração
+  - [ ] Deve ser possível definir qual o período de administração atual
 
 - Listagem do Calendário
   - [ ] Deve incluir todos os trabalhos e filantropias do período de administração ordenados por data

@@ -1,5 +1,5 @@
-import { getCustomRepository } from "typeorm";
-import { FinancialEntriesRepositories } from "../repositories/FinancialEntriesRepositories";
+import { getCustomRepository } from 'typeorm';
+import { FinancialEntriesRepositories } from '../repositories/FinancialEntriesRepositories';
 
 interface IFinancialEntriesRequest {
   description: string;
@@ -9,17 +9,19 @@ interface IFinancialEntriesRequest {
 }
 
 class CreateFinancialEntriesService {
-  async execute({ description, type, date, value }: IFinancialEntriesRequest) {
+  async execute({
+    description, type, date, value,
+  }: IFinancialEntriesRequest) {
     const financialEntriesRepository = getCustomRepository(
-      FinancialEntriesRepositories
+      FinancialEntriesRepositories,
     );
 
     if (!description || !type || !date || !value) {
-      throw new Error("Fill all fields");
+      throw new Error('Fill all fields');
     }
 
-    if (type != "credit" && type != "debit") {
-      throw new Error("Type incorrect");
+    if (type != 'credit' && type != 'debit') {
+      throw new Error('Type incorrect');
     }
 
     /**
@@ -27,18 +29,17 @@ class CreateFinancialEntriesService {
      */
     const dateFormatted = new Date(date);
     const dateText = dateFormatted.toISOString();
-    const dateTextFormatted = dateText.substring(0, 23).replace("T", " ");
+    const dateTextFormatted = dateText.substring(0, 23).replace('T', ' ');
 
-    const financialEntriesAlreadyExists =
-      await financialEntriesRepository.findOne({
-        description,
-        date: dateTextFormatted,
-        type,
-        value,
-      });
+    const financialEntriesAlreadyExists = await financialEntriesRepository.findOne({
+      description,
+      date: dateTextFormatted,
+      type,
+      value,
+    });
 
     if (financialEntriesAlreadyExists) {
-      throw new Error("Financial Entries already exists");
+      throw new Error('Financial Entries already exists');
     }
 
     const financialEntries = financialEntriesRepository.create({
