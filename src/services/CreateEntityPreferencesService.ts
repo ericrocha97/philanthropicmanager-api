@@ -117,9 +117,7 @@ class CreateEntityPreferencesService {
   async verifyMemberIsValid(memberId: string, role: string) {
     const memberRepository = getRepository(Member);
 
-    const member = await memberRepository.findOne({
-      id: memberId,
-    });
+    const member = await memberRepository.findOne(memberId);
 
     if (!member) {
       throw new Error(`Member not found for role ${role}`);
