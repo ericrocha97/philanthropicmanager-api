@@ -9,44 +9,44 @@ export class CreateCalendar1642821111355 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
-            isPrimary: true,
+            isPrimary: true
           },
           {
             name: "title",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "extra",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "date",
             type: "date",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "description",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "type",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "created_at",
             type: "timestamp",
-            default: "now()",
+            default: "now()"
           },
           {
             name: "updated_at",
             type: "timestamp",
-            default: "now()",
-          },
-        ],
+            default: "now()"
+          }
+        ]
       })
     );
   }

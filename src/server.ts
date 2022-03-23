@@ -18,13 +18,13 @@ app.use(
     if (err instanceof Error) {
       response.status(400).json({
         status: "error",
-        message: err.message,
+        message: err.message
       });
     }
 
     return response.status(500).json({
       status: "error",
-      message: "Internal server error",
+      message: "Internal server error"
     });
   }
 );

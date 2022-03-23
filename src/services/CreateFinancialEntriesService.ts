@@ -1,5 +1,6 @@
-import { getCustomRepository } from 'typeorm';
-import { FinancialEntriesRepositories } from '../repositories/FinancialEntriesRepositories';
+import { getCustomRepository } from "typeorm";
+import { FinancialEntriesRepositories } from "../repositories/FinancialEntriesRepositories";
+import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDate";
 
 interface IFinancialEntriesRequest {
   description: string;
@@ -9,19 +10,18 @@ interface IFinancialEntriesRequest {
 }
 
 class CreateFinancialEntriesService {
-  async execute({
-    description, type, date, value,
-  }: IFinancialEntriesRequest) {
+  async execute({ description, type, date, value }: IFinancialEntriesRequest) {
     const financialEntriesRepository = getCustomRepository(
-      FinancialEntriesRepositories,
+      FinancialEntriesRepositories
     );
+    const { dateInt, dateEnd } = await GetCurrentAdministrationDate();
 
     if (!description || !type || !date || !value) {
-      throw new Error('Fill all fields');
+      throw new Error("Fill all fields");
     }
 
-    if (type != 'credit' && type != 'debit') {
-      throw new Error('Type incorrect');
+    if (type != "credit" && type != "debit") {
+      throw new Error("Type incorrect");
     }
 
     /**
@@ -29,24 +29,34 @@ class CreateFinancialEntriesService {
      */
     const dateFormatted = new Date(date);
     const dateText = dateFormatted.toISOString();
-    const dateTextFormatted = dateText.substring(0, 23).replace('T', ' ');
+    const [dateTextFormatted] = dateText
+      .substring(0, 23)
+      .replace("T", " ")
+      .split(" ");
 
-    const financialEntriesAlreadyExists = await financialEntriesRepository.findOne({
-      description,
-      date: dateTextFormatted,
-      type,
-      value,
-    });
+    if (dateTextFormatted > dateEnd || dateTextFormatted < dateInt) {
+      throw new Error(
+        "It is not possible to register financial entries outside the administrative period."
+      );
+    }
+
+    const financialEntriesAlreadyExists =
+      await financialEntriesRepository.findOne({
+        description,
+        date: dateTextFormatted,
+        type,
+        value
+      });
 
     if (financialEntriesAlreadyExists) {
-      throw new Error('Financial Entries already exists');
+      throw new Error("Financial Entries already exists");
     }
 
     const financialEntries = financialEntriesRepository.create({
       description,
       type,
       date,
-      value,
+      value
     });
 
     await financialEntriesRepository.save(financialEntries);

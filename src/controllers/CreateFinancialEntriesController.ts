@@ -11,7 +11,7 @@ class CreateFinancialEntriesController {
       description,
       type,
       date,
-      value,
+      value
     });
 
     return response.json(philanthropy);

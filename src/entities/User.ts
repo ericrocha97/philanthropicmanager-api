@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
-  JoinColumn,
+  JoinColumn
 } from "typeorm";
 
 import { v4 as uuid } from "uuid";

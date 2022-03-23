@@ -11,14 +11,14 @@ class CreateUserController {
       username,
       password,
       CID,
-      admin,
+      admin
     });
 
     const responseObject = {
       id: user.id,
       username: user.username,
       memberId: user.memberId,
-      admin: user.admin,
+      admin: user.admin
     };
 
     return response.json(responseObject);

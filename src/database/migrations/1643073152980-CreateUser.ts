@@ -9,38 +9,38 @@ export class CreateUser1643073152980 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
-            isPrimary: true,
+            isPrimary: true
           },
           {
             name: "username",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "password",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "memberId",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "admin",
             type: "boolean",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "created_at",
             type: "timestamp",
-            default: "now()",
+            default: "now()"
           },
           {
             name: "updated_at",
             type: "timestamp",
-            default: "now()",
-          },
+            default: "now()"
+          }
         ],
         foreignKeys: [
           {
@@ -49,9 +49,9 @@ export class CreateUser1643073152980 implements MigrationInterface {
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
-          },
-        ],
+            onUpdate: "CASCADE"
+          }
+        ]
       })
     );
   }

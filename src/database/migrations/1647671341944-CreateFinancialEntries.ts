@@ -9,39 +9,39 @@ export class CreateFinancialEntries1647671341944 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
-            isPrimary: true,
+            isPrimary: true
           },
           {
             name: "description",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "type",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "date",
             type: "date",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "value",
             type: "decimal",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "created_at",
             type: "timestamp",
-            default: "now()",
+            default: "now()"
           },
           {
             name: "updated_at",
             type: "timestamp",
-            default: "now()",
-          },
-        ],
+            default: "now()"
+          }
+        ]
       })
     );
   }

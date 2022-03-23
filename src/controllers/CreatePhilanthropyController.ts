@@ -12,7 +12,7 @@ class CreatePhilanthropyController {
       description,
       local,
       date,
-      type,
+      type
     });
 
     return response.json(philanthropy);

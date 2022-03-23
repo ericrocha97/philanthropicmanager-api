@@ -9,50 +9,50 @@ export class CreateMember1643072877675 implements MigrationInterface {
           {
             name: "id",
             type: "uuid",
-            isPrimary: true,
+            isPrimary: true
           },
           {
             name: "name",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "CID",
             type: "varchar",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "address",
-            type: "varchar",
+            type: "varchar"
           },
           {
             name: "CEP",
-            type: "varchar",
+            type: "varchar"
           },
           {
             name: "phone",
-            type: "varchar",
+            type: "varchar"
           },
           {
             name: "birthday",
-            type: "date",
+            type: "date"
           },
           {
             name: "level",
             type: "int",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "created_at",
             type: "timestamp",
-            default: "now()",
+            default: "now()"
           },
           {
             name: "updated_at",
             type: "timestamp",
-            default: "now()",
-          },
-        ],
+            default: "now()"
+          }
+        ]
       })
     );
   }

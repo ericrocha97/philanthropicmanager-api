@@ -20,7 +20,7 @@ class CreateUserService {
     }
 
     const userAlreadyExists = await userRepository.findOne({
-      username,
+      username
     });
 
     if (userAlreadyExists) {
@@ -28,9 +28,8 @@ class CreateUserService {
     }
 
     const memberExists = await memberRepository.findOne({
-      CID: CID,
+      CID: CID
     });
-
 
     if (!memberExists) {
       throw new Error("Member not found");
@@ -44,7 +43,7 @@ class CreateUserService {
       username,
       password: passwordHash,
       memberId,
-      admin,
+      admin
     });
 
     await userRepository.save(user);

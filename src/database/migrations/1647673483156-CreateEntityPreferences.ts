@@ -1,7 +1,8 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateEntityPreferences1647673483156
-  implements MigrationInterface {
+  implements MigrationInterface
+{
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -10,63 +11,63 @@ export class CreateEntityPreferences1647673483156
           {
             name: "id",
             type: "uuid",
-            isPrimary: true,
+            isPrimary: true
           },
           {
             name: "administration",
             type: "varchar",
-            isUnique: true,
+            isUnique: true
           },
           {
             name: "leader1",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "leader2",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "leader3",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "treasurer",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "clerk",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "president_work",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "president_philanthropy",
             type: "uuid",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "current",
             type: "boolean",
-            isNullable: false,
+            isNullable: false
           },
           {
             name: "created_at",
             type: "timestamp",
-            default: "now()",
+            default: "now()"
           },
           {
             name: "updated_at",
             type: "timestamp",
-            default: "now()",
-          },
+            default: "now()"
+          }
         ],
         foreignKeys: [
           {
@@ -75,7 +76,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberLeader2",
@@ -83,7 +84,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberLeader3",
@@ -91,7 +92,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberTreasurer",
@@ -99,7 +100,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberClerk",
@@ -107,7 +108,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberPresident_work",
@@ -115,7 +116,7 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
+            onUpdate: "CASCADE"
           },
           {
             name: "FKMemberPresident_philanthropy",
@@ -123,8 +124,8 @@ export class CreateEntityPreferences1647673483156
             referencedTableName: "member",
             referencedColumnNames: ["id"],
             onDelete: "CASCADE",
-            onUpdate: "CASCADE",
-          },
+            onUpdate: "CASCADE"
+          }
         ]
       })
     );

@@ -12,10 +12,10 @@ class CreateWorkController {
       description,
       member,
       date,
-      type,
+      type
     });
 
-    return response.json(work)
+    return response.json(work);
   }
 }
 

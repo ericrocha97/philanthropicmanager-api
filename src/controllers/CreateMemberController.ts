@@ -14,7 +14,7 @@ class CreateMemberController {
       CEP,
       phone,
       birthday,
-      level,
+      level
     });
 
     return response.json(member);

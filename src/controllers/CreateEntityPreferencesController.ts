@@ -29,7 +29,7 @@ class CreateEntityPreferencesController {
       current
     });
 
-    return response.json(philanthropy)
+    return response.json(philanthropy);
   }
 }
 

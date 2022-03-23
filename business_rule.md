@@ -14,7 +14,7 @@
   - [x] Não é permitido cadastrar um membro sem aniversario
   - [x] Não é permitido cadastrar um membro sem nível
   - [x] Não é permitido cadastrar um membro com um CID em uso
-  - [ ] Não é permitido o cadastro por usuários que não sejam administradores
+  - [x] Não é permitido o cadastro por usuários que não sejam administradores
   - [ ] Deve ser possível listar os membros
   - [ ] Deve ser possível alterar os membros
   - [ ] Deve ser possível desativar os membros
@@ -25,8 +25,8 @@
   - [x] Não é permitido cadastrar uma filantropia sem local
   - [x] Não é permitido cadastrar uma filantropia sem data
   - [x] Não é permitido cadastrar uma filantropia sem o tipo 'philanthropy'
-  - [ ] Não é permitido cadastrar uma filantropia fora do período da administração
-  - [ ] O usuário precisa estar autenticado na aplicação
+  - [x] Não é permitido cadastrar uma filantropia fora do período da administração
+  - [x] O usuário precisa estar autenticado na aplicação
   - [ ] Deve ser possível alterar as filantropias
   - [ ] Deve ser possível remover as filantropias por um administrador
 
@@ -36,8 +36,8 @@
   - [x] Não é permitido cadastrar uma trabalho sem membro valido
   - [x] Não é permitido cadastrar uma trabalho sem data
   - [x] Não é permitido cadastrar uma trabalho sem o tipo 'work'
-  - [ ] Não é permitido cadastrar uma trabalho fora do período da administração
-  - [ ] O usuário precisa estar autenticado na aplicação
+  - [x] Não é permitido cadastrar uma trabalho fora do período da administração
+  - [x] O usuário precisa estar autenticado na aplicação
   - [ ] Deve ser possível alterar os trabalhos
   - [ ] Deve ser possível remover os trabalhos por um administrador
   
@@ -46,14 +46,14 @@
   - [x] Não é permitido cadastrar um lançamento sem o tipo  'credit' ou 'debit'
   - [x] Não é permitido cadastrar um lançamento sem data
   - [x] Não é permitido cadastrar um lançamento sem o valor
-  - [ ] Não é permitido cadastrar uma trabalho fora do período da administração
-  - [ ] O usuário precisa estar autenticado na aplicação
+  - [x] Não é permitido cadastrar uma trabalho fora do período da administração
+  - [x] O usuário precisa estar autenticado na aplicação
   - [ ] Deve ser possível listar todos os lançamentos por data
   - [ ] Deve ser possível alterar os lançamentos
   - [ ] Deve ser possível remover os lançamentos por um administrador
 
 - Cadastro de Preferencias da Entidade
-  - [ ] As preferências da entidade devem ser cadastradas por um administrador
+  - [x] As preferências da entidade devem ser cadastradas por um administrador
   - [x] Os períodos de administração são semestrais
   - [x] Deve ser possível definir um membro para cada cargo
   - [ ] Deve ser possível alterar qualquer membro de qualquer cargo
@@ -62,6 +62,6 @@
   - [ ] Deve ser possível definir qual o período de administração atual
 
 - Listagem do Calendário
-  - [ ] Deve incluir todos os trabalhos e filantropias do período de administração ordenados por data
-  - [ ] Deve incluir todos os detalhes dos trabalhos e filantropias  
-  - [ ] O usuário precisa estar autenticado na aplicação
+  - [x] Deve incluir todos os trabalhos e filantropias do período de administração ordenados por data
+  - [x] Deve incluir todos os detalhes dos trabalhos e filantropias  
+  - [x] O usuário precisa estar autenticado na aplicação

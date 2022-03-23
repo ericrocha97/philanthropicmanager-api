@@ -1,7 +1,7 @@
-import { compare } from 'bcryptjs';
-import { sign } from 'jsonwebtoken';
-import { getRepository } from 'typeorm';
-import { User } from '../entities/User';
+import { compare } from "bcryptjs";
+import { sign } from "jsonwebtoken";
+import { getRepository } from "typeorm";
+import { User } from "../entities/User";
 
 interface IAuthenticateRequest {
   username: string;
@@ -13,29 +13,29 @@ class AuthenticateUserService {
     const userRepositories = getRepository(User);
 
     const user = await userRepositories.findOne({
-      username,
+      username
     });
 
     if (!user) {
-      throw new Error('Username or password is wrong');
+      throw new Error("Username or password is wrong");
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error('Username or password is wrong');
+      throw new Error("Username or password is wrong");
     }
 
     const token = sign(
       {
         username: user.username,
-        member: user.member,
+        member: user.member
       },
       process.env.JWT_KEY as string,
       {
         subject: user.id,
-        expiresIn: '1d',
-      },
+        expiresIn: "1d"
+      }
     );
 
     return token;
