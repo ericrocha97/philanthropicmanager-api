@@ -35,6 +35,10 @@ class CreateUserService {
       throw new Error("Member not found");
     }
 
+    if (!memberExists.active) {
+      throw new Error("Member is not active");
+    }
+
     const memberId = memberExists?.id;
 
     const passwordHash = await hash(password, 8);

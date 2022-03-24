@@ -9,11 +9,11 @@ export default {
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_DATABASE,
-  entities: [path.join(__dirname, "..", "entities", "*.*")],
-  migrations: [path.join(__dirname, "migrations", "*.*")],
+  entities: ["src/entities/*.ts"],
+  migrations: ["src/database/migrations/*.ts"],
   cli: {
-    migrationsDir: path.join(__dirname, "migrations", "*.*"),
-    entitiesDir: path.join(__dirname, "..", "entities", "*.*")
+    migrationsDir: "src/database/migrations",
+    entitiesDir: "src/entities"
   },
   synchronize: false
 } as ConnectionOptions;

@@ -29,6 +29,10 @@ class CreateWorkService {
       throw new Error("Member not found");
     }
 
+    if(!memberExists.active) {
+      throw new Error("Member is not active");
+    }
+
     if (type != "work") {
       throw new Error("Work type incorrect");
     }

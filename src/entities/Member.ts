@@ -34,6 +34,9 @@ export class Member {
   @Column()
   level: number;
 
+  @Column()
+  active: boolean;
+
   @CreateDateColumn()
   created_at: Date;
 

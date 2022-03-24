@@ -125,6 +125,10 @@ class CreateEntityPreferencesService {
       throw new Error(`Member not found for role ${role}`);
     }
 
+    if (!member.active) {
+      throw new Error(`Member is not active for role ${role}`);
+    }
+
     return member;
   }
 }

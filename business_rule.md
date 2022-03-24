@@ -15,9 +15,9 @@
   - [x] Não é permitido cadastrar um membro sem nível
   - [x] Não é permitido cadastrar um membro com um CID em uso
   - [x] Não é permitido o cadastro por usuários que não sejam administradores
-  - [ ] Deve ser possível listar os membros
-  - [ ] Deve ser possível alterar os membros
-  - [ ] Deve ser possível desativar os membros
+  - [x] Deve ser possível listar os membros
+  - [x] Deve ser possível alterar os membros
+  - [x] Deve ser possível desativar os membros
   
 - Cadastro de Filantropia
   - [x] Não é permitido cadastrar uma filantropia sem titulo
@@ -48,7 +48,7 @@
   - [x] Não é permitido cadastrar um lançamento sem o valor
   - [x] Não é permitido cadastrar uma trabalho fora do período da administração
   - [x] O usuário precisa estar autenticado na aplicação
-  - [ ] Deve ser possível listar todos os lançamentos por data
+  - [X] Deve ser possível listar todos os lançamentos do período da administração ordenado por data
   - [ ] Deve ser possível alterar os lançamentos
   - [ ] Deve ser possível remover os lançamentos por um administrador
 
