@@ -1,13 +1,13 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2022-03-20T07:49:25.007Z",
+  "__export_date": "2022-03-24T05:45:08.125Z",
   "__export_source": "insomnia.desktop.app:v2022.2.0",
   "resources": [
     {
       "_id": "req_30f5f8cd259844daa9e24289e4d2079f",
       "parentId": "fld_4c799d5da7624577a001647a316cf7b7",
-      "modified": 1647762130159,
+      "modified": 1648100375333,
       "created": 1647758670644,
       "url": "{{ _.base_URL }}/login",
       "name": "Generate Token",
@@ -61,7 +61,7 @@
     {
       "_id": "req_8679b9332d42466098b84cc8ad0b969c",
       "parentId": "fld_0b13a53c6e3a42bb88299431a4adea2f",
-      "modified": 1647762125586,
+      "modified": 1648100374148,
       "created": 1647676185219,
       "url": "{{ _.base_URL }}/entity-preferences",
       "name": "Create Entity Preferences",
@@ -69,7 +69,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"administration\": \"2/2022\",\n\t\"leader1\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"leader2\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"leader3\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"treasurer\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"clerk\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"president_work\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"president_philanthropy\": \"088c61a7-7f49-427e-bea1-343b259d99f6\",\n\t\"current\": false\n}"
+        "text": "{\n\t\"administration\": \"2/2021\",\n\t\"leader1\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"leader2\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"leader3\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"treasurer\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"clerk\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"president_work\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"president_philanthropy\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"current\": false\n}"
       },
       "parameters": [],
       "headers": [
@@ -79,7 +79,10 @@
           "id": "pair_e6e9c9a97673409aa50b63f7732aae98"
         }
       ],
-      "authentication": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
       "metaSortKey": -1647676185219,
       "isPrivate": false,
       "settingStoreCookies": true,
@@ -103,28 +106,38 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_8bae47222ab8443c8cf80c0652900398",
+      "_id": "req_c7e9849a3eb64e179116b3e3316d6960",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1647761917492,
-      "created": 1643076958820,
-      "url": "{{ _.base_URL }}/users",
-      "name": "Create User",
+      "modified": 1648100555985,
+      "created": 1648099993061,
+      "url": "{{ _.base_URL }}/members",
+      "name": "Disable Member",
       "description": "",
-      "method": "POST",
+      "method": "DELETE",
       "body": {
         "mimeType": "application/json",
-        "text": " {\n    \"username\": \"ericmrocha97\",\n    \"password\": \"123456\",\n    \"CID\": \"123456789868\",\t\n    \"admin\": false\n  }"
+        "text": "{\n\t\"active\": false\n}"
       },
-      "parameters": [],
+      "parameters": [
+        {
+          "id": "pair_e43439177ba04ff29f408e6fc0c9a92f",
+          "name": "id",
+          "value": "796559b4-2030-4ef4-9697-43cfab10b75a",
+          "description": ""
+        }
+      ],
       "headers": [
         {
           "name": "Content-Type",
           "value": "application/json",
-          "id": "pair_22a01caf2a5c4bed854a7db14fce6c4a"
+          "id": "pair_ca905720aa3943e39196d69b7bb60dc7"
         }
       ],
-      "authentication": {},
-      "metaSortKey": -1643076753455,
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648097430580,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -147,9 +160,109 @@
       "_type": "request_group"
     },
     {
+      "_id": "req_6f2a3ec1d5db43178cc55636c43e41fa",
+      "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "modified": 1648100551474,
+      "created": 1648097430530,
+      "url": "{{ _.base_URL }}/members",
+      "name": "Update Member",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"phone\": \"12345678910\",\n\t\"level\": 2\n}"
+      },
+      "parameters": [
+        {
+          "id": "pair_ff817df1a1e94c92a63680ed25a0a829",
+          "name": "id",
+          "value": "796559b4-2030-4ef4-9697-43cfab10b75a",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_35fba0f61b314555a3a2a61d03edc273"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648097430530,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fc80ee6b293f40688d945e20c7dfaf55",
+      "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "modified": 1648100559345,
+      "created": 1648095436980,
+      "url": "{{ _.base_URL }}/members",
+      "name": "List Members",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648095436980,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8bae47222ab8443c8cf80c0652900398",
+      "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
+      "modified": 1648100361933,
+      "created": 1643076958820,
+      "url": "{{ _.base_URL }}/users",
+      "name": "Create User",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": " {\n    \"username\": \"ericMrocha97\",\n    \"password\": \"123456\",\n    \"CID\": \"1234567898789\",\t\n    \"admin\": false\n  }"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_22a01caf2a5c4bed854a7db14fce6c4a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1643076753455,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
       "_id": "req_7b932cc249ba4b88b7248116a4a45990",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1647762151348,
+      "modified": 1648100371177,
       "created": 1643076753405,
       "url": "{{ _.base_URL }}/members",
       "name": "Create Member",
@@ -157,7 +270,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"Eric M Rocha\",\n\t\"CID\": \"123456789868\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
+        "text": "{\n\t\"name\": \"Eric M Rocha\",\n\t\"CID\": \"1234567898789\",\n\t\"address\": \"Rua dois\",\n\t\"CEP\": \"12345-678\",\n\t\"phone\": \"123456789\",\n\t\"birthday\": \"2020-01-01\",\n\t\"level\": 3\n}"
       },
       "parameters": [],
       "headers": [
@@ -167,7 +280,10 @@
           "id": "pair_5de473cb300b4a84b3517fa493c51b9d"
         }
       ],
-      "authentication": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
       "metaSortKey": -1643076753405,
       "isPrivate": false,
       "settingStoreCookies": true,
@@ -179,28 +295,22 @@
       "_type": "request"
     },
     {
-      "_id": "req_19154e4a95124a15828a45899b4275bb",
+      "_id": "req_f63a1139b22742c88b15d7e715ec0c76",
       "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1647762136824,
-      "created": 1642826805732,
-      "url": "{{ _.base_URL }}/philanthropies",
-      "name": "Create Philanthropy",
+      "modified": 1648100351814,
+      "created": 1648010694785,
+      "url": "{{ _.base_URL }}/calendar",
+      "name": "List Calendar",
       "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"local\": \"Lar dos Idosos, Rua João de Barros, Nº: 5\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"philanthropy\"\n}"
-      },
+      "method": "GET",
+      "body": {},
       "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_5056fbc237224531b5990b826fc2aec2"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1642826805732,
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648010694785,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -223,17 +333,17 @@
       "_type": "request_group"
     },
     {
-      "_id": "req_314bd75fb8864cee90f34433cde6a0a4",
+      "_id": "req_19154e4a95124a15828a45899b4275bb",
       "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1647762207758,
-      "created": 1647672842701,
-      "url": "{{ _.base_URL }}/works",
-      "name": "Create Work",
+      "modified": 1648100351338,
+      "created": 1642826805732,
+      "url": "{{ _.base_URL }}/philanthropies",
+      "name": "Create Philanthropy",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"member\": \"ae101439-45fd-4273-9de3-f98cc1ab0778\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"work\"\n}"
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos) 4\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"local\": \"Lar dos Idosos, Rua João de Barros, Nº: 5\",\n\t\"date\": \"2022-03-07\",\n\t\"type\": \"philanthropy\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -243,7 +353,45 @@
           "id": "pair_5056fbc237224531b5990b826fc2aec2"
         }
       ],
-      "authentication": {},
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1642826805732,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_314bd75fb8864cee90f34433cde6a0a4",
+      "parentId": "fld_48e1e44834fa439186f78ee492268642",
+      "modified": 1648100350694,
+      "created": 1647672842701,
+      "url": "{{ _.base_URL }}/works",
+      "name": "Create Work",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos)8\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"member\": \"796559b4-2030-4ef4-9697-43cfab10b75a\",\n\t\"date\": \"01/31/2022\",\n\t\"type\": \"work\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5056fbc237224531b5990b826fc2aec2"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
       "metaSortKey": -1636757004725.5,
       "isPrivate": false,
       "settingStoreCookies": true,
@@ -255,28 +403,22 @@
       "_type": "request"
     },
     {
-      "_id": "req_08cb441357314996b25a13abfff86afa",
+      "_id": "req_e1a7100437824aa58b3979003edbf81a",
       "parentId": "fld_d36a19d92bd84fed984d0916820fec10",
-      "modified": 1647762183775,
-      "created": 1647672977100,
+      "modified": 1648100348451,
+      "created": 1648096064139,
       "url": "{{ _.base_URL }}/financial-entries",
-      "name": "Create Financial Entries",
+      "name": "List Financial Entries",
       "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\n\t\"description\": \"Primeira Compra2\",\n\t\"type\": \"credit\",\n\t\"date\": \"01/31/2022\",\n\t\"value\": 150.87\n}"
-      },
+      "method": "GET",
+      "body": {},
       "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_c671333ea6d64274b0dba410946475ed"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1647672977100,
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648096064140,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -297,6 +439,42 @@
       "environmentPropertyOrder": null,
       "metaSortKey": -1642951759716.5,
       "_type": "request_group"
+    },
+    {
+      "_id": "req_08cb441357314996b25a13abfff86afa",
+      "parentId": "fld_d36a19d92bd84fed984d0916820fec10",
+      "modified": 1648100349194,
+      "created": 1647672977100,
+      "url": "{{ _.base_URL }}/financial-entries",
+      "name": "Create Financial Entries",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"description\": \"Primeira Compra5\",\n\t\"type\": \"debit\",\n\t\"date\": \"01/31/2022\",\n\t\"value\": 150.87\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c671333ea6d64274b0dba410946475ed"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}",
+        "disabled": false
+      },
+      "metaSortKey": -1647672977100,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
     },
     {
       "_id": "env_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
