@@ -10,7 +10,9 @@ import { DisableMemberController } from "./controllers/DisableMemberController";
 import { ListCalendarController } from "./controllers/ListCalendarController";
 import { ListFinancialEntriesController } from "./controllers/ListFinancialEntriesController";
 import { ListMemberController } from "./controllers/ListMemberController";
+import { RemovePhilanthropyController } from "./controllers/RemovePhilanthropyController";
 import { UpdateMemberController } from "./controllers/UpdateMemberController";
+import { UpdatePhilanthropyController } from "./controllers/UpdatePhilanthropyController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 
@@ -29,6 +31,8 @@ const listMemberController = new ListMemberController();
 const listFinancialEntriesController = new ListFinancialEntriesController();
 const updateMemberController = new UpdateMemberController();
 const disableMemberController = new DisableMemberController();
+const updatePhilanthropyController = new UpdatePhilanthropyController();
+const removePhilanthropyController = new RemovePhilanthropyController();
 
 router.post(
   "/philanthropies",
@@ -84,6 +88,19 @@ router.delete(
   ensureAuthenticated,
   ensureAdmin,
   disableMemberController.handle
+);
+
+router.put(
+  "/philanthropies/",
+  ensureAuthenticated,
+  updatePhilanthropyController.handle
+);
+
+router.delete(
+  "/philanthropies/",
+  ensureAuthenticated,
+  ensureAdmin,
+  removePhilanthropyController.handle
 );
 
 export { router };

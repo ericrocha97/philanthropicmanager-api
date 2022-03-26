@@ -1,13 +1,13 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2022-03-24T05:45:08.125Z",
-  "__export_source": "insomnia.desktop.app:v2022.2.0",
+  "__export_date": "2022-03-26T04:31:36.473Z",
+  "__export_source": "insomnia.desktop.app:v2022.2.1",
   "resources": [
     {
       "_id": "req_30f5f8cd259844daa9e24289e4d2079f",
       "parentId": "fld_4c799d5da7624577a001647a316cf7b7",
-      "modified": 1648100375333,
+      "modified": 1648268211212,
       "created": 1647758670644,
       "url": "{{ _.base_URL }}/login",
       "name": "Generate Token",
@@ -51,10 +51,10 @@
     {
       "_id": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
       "parentId": null,
-      "modified": 1642826768466,
+      "modified": 1648100965174,
       "created": 1642826768466,
       "name": "philanthropicmanager-api",
-      "description": "",
+      "description": "a manager for philanthropic entities",
       "scope": "collection",
       "_type": "workspace"
     },
@@ -108,7 +108,7 @@
     {
       "_id": "req_c7e9849a3eb64e179116b3e3316d6960",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1648100555985,
+      "modified": 1648268753430,
       "created": 1648099993061,
       "url": "{{ _.base_URL }}/members",
       "name": "Disable Member",
@@ -204,7 +204,7 @@
     {
       "_id": "req_fc80ee6b293f40688d945e20c7dfaf55",
       "parentId": "fld_c985d4ffc3b041e3aed38d2986bc3f59",
-      "modified": 1648100559345,
+      "modified": 1648100926483,
       "created": 1648095436980,
       "url": "{{ _.base_URL }}/members",
       "name": "List Members",
@@ -295,47 +295,9 @@
       "_type": "request"
     },
     {
-      "_id": "req_f63a1139b22742c88b15d7e715ec0c76",
-      "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1648100351814,
-      "created": 1648010694785,
-      "url": "{{ _.base_URL }}/calendar",
-      "name": "List Calendar",
-      "description": "",
-      "method": "GET",
-      "body": {},
-      "parameters": [],
-      "headers": [],
-      "authentication": {
-        "type": "bearer",
-        "token": "{{ _.token }}"
-      },
-      "metaSortKey": -1648010694785,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_48e1e44834fa439186f78ee492268642",
-      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "modified": 1647673011836,
-      "created": 1642826779213,
-      "name": "Calendar",
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1643014249968.25,
-      "_type": "request_group"
-    },
-    {
       "_id": "req_19154e4a95124a15828a45899b4275bb",
-      "parentId": "fld_48e1e44834fa439186f78ee492268642",
-      "modified": 1648100351338,
+      "parentId": "fld_f618cfc3f2c248c4bcae2d83e29ea027",
+      "modified": 1648268781224,
       "created": 1642826805732,
       "url": "{{ _.base_URL }}/philanthropies",
       "name": "Create Philanthropy",
@@ -358,6 +320,131 @@
         "token": "{{ _.token }}"
       },
       "metaSortKey": -1642826805732,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_f618cfc3f2c248c4bcae2d83e29ea027",
+      "parentId": "fld_48e1e44834fa439186f78ee492268642",
+      "modified": 1648268253503,
+      "created": 1648268231701,
+      "name": "Philanthropy",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1648268231701,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_48e1e44834fa439186f78ee492268642",
+      "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
+      "modified": 1647673011836,
+      "created": 1642826779213,
+      "name": "Calendar",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1643014249968.25,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_03bab935a7994694a556f0e43ec442e2",
+      "parentId": "fld_f618cfc3f2c248c4bcae2d83e29ea027",
+      "modified": 1648268777405,
+      "created": 1648268268312,
+      "url": "{{ _.base_URL }}/philanthropies",
+      "name": "Update Philanthropy",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Arrecadação de fundos (Lar dos Idosos) 18\",\n\t\"description\": \"Arrecadação de fundos para ajudar o lar dos idosos\",\n\t\"local\": \"Lar dos Idosos, Rua João de Barros, Nº: 10\",\n\t\"date\": \"2022-10-08\"\n}"
+      },
+      "parameters": [
+        {
+          "id": "pair_3c808a53fc11486bab4e9fb6f3fe3678",
+          "name": "id",
+          "value": "8a2e6247-7259-43c3-b225-2a44efc6000a",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_5056fbc237224531b5990b826fc2aec2"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1639791905228.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c78451258f36492f8d13a3bb0343e0e7",
+      "parentId": "fld_f618cfc3f2c248c4bcae2d83e29ea027",
+      "modified": 1648268757360,
+      "created": 1648268278269,
+      "url": "{{ _.base_URL }}/philanthropies",
+      "name": "Remove Philanthropy",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_5f91c0fdb5144b0287dc7f619a549028",
+          "name": "id",
+          "value": "8a2e6247-7259-43c3-b225-2a44efc6000a",
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1638274454977.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f63a1139b22742c88b15d7e715ec0c76",
+      "parentId": "fld_48e1e44834fa439186f78ee492268642",
+      "modified": 1648268523223,
+      "created": 1648010694785,
+      "url": "{{ _.base_URL }}/calendar",
+      "name": "List Calendar",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1648010694785,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -479,19 +566,11 @@
     {
       "_id": "env_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
       "parentId": "wrk_0ebe99ef29244958b8b4a6802d8cc689",
-      "modified": 1647759003668,
+      "modified": 1648100922188,
       "created": 1642826768485,
       "name": "Base Environment",
-      "data": {
-        "base_URL": "http://localhost:3000",
-        "token": "{% response 'body', 'req_30f5f8cd259844daa9e24289e4d2079f', 'b64::JC50b2tlbg==::46b', 'when-expired', 85999 %}"
-      },
-      "dataPropertyOrder": {
-        "&": [
-          "base_URL",
-          "token"
-        ]
-      },
+      "data": {},
+      "dataPropertyOrder": {},
       "color": null,
       "isPrivate": false,
       "metaSortKey": 1642826768485,
@@ -515,6 +594,27 @@
       "contents": "",
       "contentType": "yaml",
       "_type": "api_spec"
+    },
+    {
+      "_id": "env_3d88ea281cb14ad88965c9eeef615e5d",
+      "parentId": "env_f8c57819ecc29b785dc3c9893ee64dbea6b6f867",
+      "modified": 1648100914866,
+      "created": 1648100883328,
+      "name": "philanthropicmanager-api",
+      "data": {
+        "base_URL": "http://localhost:3000",
+        "token": "{% response 'body', 'req_30f5f8cd259844daa9e24289e4d2079f', 'b64::JC50b2tlbg==::46b', 'when-expired', 85999 %}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_URL",
+          "token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1648100883328,
+      "_type": "environment"
     }
   ]
 }

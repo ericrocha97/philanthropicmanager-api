@@ -1,6 +1,5 @@
 import { getCustomRepository } from "typeorm";
 import { MemberRepositories } from "../repositories/MemberRepositories";
-import path from "path";
 
 interface IMemberRequest {
   id: string;
@@ -35,7 +34,7 @@ class UpdateMemberService {
       throw new Error("Member is not active");
     }
 
-    const memberUpdated = await memberRepository.update(id, {
+    await memberRepository.update(id, {
       name: name || memberToUpdate.name,
       CID: CID || memberToUpdate.CID,
       address: address || memberToUpdate.address,

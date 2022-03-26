@@ -27,8 +27,8 @@
   - [x] Não é permitido cadastrar uma filantropia sem o tipo 'philanthropy'
   - [x] Não é permitido cadastrar uma filantropia fora do período da administração
   - [x] O usuário precisa estar autenticado na aplicação
-  - [ ] Deve ser possível alterar as filantropias
-  - [ ] Deve ser possível remover as filantropias por um administrador
+  - [x] Deve ser possível alterar as filantropias
+  - [x] Deve ser possível remover as filantropias por um administrador
 
 - Cadastro de Trabalho
   - [x] Não é permitido cadastrar uma trabalho sem titulo

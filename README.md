@@ -14,12 +14,13 @@
 ## Install
 
 ```sh
-yarn install
+yarn
 ```
 
 ## Usage
 
 ```sh
+yarn typeorm migration:run
 yarn dev
 ```
 

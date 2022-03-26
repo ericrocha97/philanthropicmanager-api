@@ -1,6 +1,5 @@
 import { getCustomRepository } from "typeorm";
 import { MemberRepositories } from "../repositories/MemberRepositories";
-import path from "path";
 
 class DisableMemberService {
   async execute(id: string, active: boolean) {
@@ -11,7 +10,7 @@ class DisableMemberService {
       throw new Error("Member not found");
     }
 
-    const memberUpdated = await memberRepository.update(id, {
+    await memberRepository.update(id, {
       active,
       updated_at: new Date()
     });
