@@ -14,6 +14,7 @@ const db = db_url.path.slice(1);
 export default {
   name: "default",
   host: host,
+
   type: "postgres",
   port: Number(port),
   username: user,
