@@ -11,5 +11,10 @@ export default {
     migrationsDir: process.env.TYPEORM_MIGRATIONS_DIR,
     entitiesDir: process.env.TYPEORM_ENTITIES_DIR
   },
-  synchronize: false
+  synchronize: false,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false
+    }
+  }
 } as ConnectionOptions;
