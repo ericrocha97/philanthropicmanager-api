@@ -6,7 +6,7 @@ interface IPhilanthropyRequest {
   title: string;
   description: string;
   local: string;
-  date: Date;
+  date: string;
   type: string;
 }
 
@@ -29,17 +29,7 @@ class CreatePhilanthropyService {
       throw new Error("Philanthropy type incorrect");
     }
 
-    /**
-     * this code is for support the type of the date in sqlite
-     */
-    const dateFormatted = new Date(date);
-    const dateText = dateFormatted.toISOString();
-    const [dateTextFormatted] = dateText
-      .substring(0, 23)
-      .replace("T", " ")
-      .split(" ");
-
-    if (dateTextFormatted > dateEnd || dateTextFormatted < dateInt) {
+    if (date > dateEnd || date < dateInt) {
       throw new Error(
         "It is not possible to register philanthropies outside the administrative period."
       );
@@ -47,7 +37,7 @@ class CreatePhilanthropyService {
 
     const calendarAlreadyExists = await calendarRepository.findOne({
       title,
-      date: dateTextFormatted,
+      date,
       extra: local,
       type
     });

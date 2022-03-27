@@ -20,7 +20,7 @@ class FinancialEntries {
   type: string;
 
   @Column()
-  date: Date;
+  date: string;
 
   @Column("decimal", { precision: 10, scale: 2 })
   value: number;

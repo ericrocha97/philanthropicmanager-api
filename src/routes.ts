@@ -10,9 +10,13 @@ import { DisableMemberController } from "./controllers/DisableMemberController";
 import { ListCalendarController } from "./controllers/ListCalendarController";
 import { ListFinancialEntriesController } from "./controllers/ListFinancialEntriesController";
 import { ListMemberController } from "./controllers/ListMemberController";
+import { RemoveFinancialEntriesController } from "./controllers/RemoveFinancialEntriesController";
 import { RemovePhilanthropyController } from "./controllers/RemovePhilanthropyController";
+import { RemoveWorkController } from "./controllers/RemoveWorkController";
+import { UpdateFinancialEntriesController } from "./controllers/UpdateFinancialEntriesController";
 import { UpdateMemberController } from "./controllers/UpdateMemberController";
 import { UpdatePhilanthropyController } from "./controllers/UpdatePhilanthropyController";
+import { UpdateWorkController } from "./controllers/UpdateWorkController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
 
@@ -33,6 +37,10 @@ const updateMemberController = new UpdateMemberController();
 const disableMemberController = new DisableMemberController();
 const updatePhilanthropyController = new UpdatePhilanthropyController();
 const removePhilanthropyController = new RemovePhilanthropyController();
+const updateWorkController = new UpdateWorkController();
+const removeWorkController = new RemoveWorkController();
+const updateFinancialEntriesController = new UpdateFinancialEntriesController();
+const removeFinancialEntriesController = new RemoveFinancialEntriesController();
 
 router.post(
   "/philanthropies",
@@ -101,6 +109,28 @@ router.delete(
   ensureAuthenticated,
   ensureAdmin,
   removePhilanthropyController.handle
+);
+
+router.put("/works", ensureAuthenticated, updateWorkController.handle);
+
+router.delete(
+  "/works",
+  ensureAuthenticated,
+  ensureAdmin,
+  removeWorkController.handle
+);
+
+router.put(
+  "/financial-entries",
+  ensureAuthenticated,
+  updateFinancialEntriesController.handle
+);
+
+router.delete(
+  "/financial-entries",
+  ensureAuthenticated,
+  ensureAdmin,
+  removeFinancialEntriesController.handle
 );
 
 export { router };

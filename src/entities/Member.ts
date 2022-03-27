@@ -29,7 +29,7 @@ export class Member {
   phone: string;
 
   @Column()
-  birthday: Date;
+  birthday: string;
 
   @Column()
   level: number;

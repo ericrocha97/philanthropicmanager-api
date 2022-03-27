@@ -8,7 +8,7 @@ interface IMemberRequest {
   address?: string;
   CEP?: string;
   phone?: string;
-  birthday?: Date;
+  birthday?: string;
   level?: number;
 }
 
@@ -41,8 +41,7 @@ class UpdateMemberService {
       CEP: CEP || memberToUpdate.CEP,
       phone: phone || memberToUpdate.phone,
       birthday: birthday || memberToUpdate.birthday,
-      level: level || memberToUpdate.level,
-      updated_at: new Date()
+      level: level || memberToUpdate.level
     });
     const member = await memberRepository.findOne(id);
 

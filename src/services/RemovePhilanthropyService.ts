@@ -10,6 +10,10 @@ class RemovePhilanthropyService {
       throw new Error("Philanthropy not found");
     }
 
+    if (philanthropyToRemove.type !== "philanthropy") {
+      throw new Error("Philanthropy type incorrect");
+    }
+
     await calendarRepository.delete({ id: id });
 
     return philanthropyToRemove;

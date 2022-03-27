@@ -5,7 +5,7 @@ import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDa
 interface IFinancialEntriesRequest {
   description: string;
   type: string;
-  date: Date;
+  date: string;
   value: number;
 }
 
@@ -24,17 +24,7 @@ class CreateFinancialEntriesService {
       throw new Error("Type incorrect");
     }
 
-    /**
-     * this code is for support the type of the date in sqlite
-     */
-    const dateFormatted = new Date(date);
-    const dateText = dateFormatted.toISOString();
-    const [dateTextFormatted] = dateText
-      .substring(0, 23)
-      .replace("T", " ")
-      .split(" ");
-
-    if (dateTextFormatted > dateEnd || dateTextFormatted < dateInt) {
+    if (date > dateEnd || date < dateInt) {
       throw new Error(
         "It is not possible to register financial entries outside the administrative period."
       );
@@ -43,7 +33,7 @@ class CreateFinancialEntriesService {
     const financialEntriesAlreadyExists =
       await financialEntriesRepository.findOne({
         description,
-        date: dateTextFormatted,
+        date,
         type,
         value
       });

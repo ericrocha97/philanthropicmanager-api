@@ -7,7 +7,7 @@ interface IWorkRequest {
   title: string;
   description: string;
   member: string;
-  date: Date;
+  date: string;
   type: string;
 }
 
@@ -29,7 +29,7 @@ class CreateWorkService {
       throw new Error("Member not found");
     }
 
-    if(!memberExists.active) {
+    if (!memberExists.active) {
       throw new Error("Member is not active");
     }
 
@@ -37,17 +37,7 @@ class CreateWorkService {
       throw new Error("Work type incorrect");
     }
 
-    /**
-     * this code is for support the type of the date in sqlite
-     */
-    const dateFormatted = new Date(date);
-    const dateText = dateFormatted.toISOString();
-    const [dateTextFormatted] = dateText
-      .substring(0, 23)
-      .replace("T", " ")
-      .split(" ");
-
-    if (dateTextFormatted > dateEnd || dateTextFormatted < dateInt) {
+    if (date > dateEnd || date < dateInt) {
       throw new Error(
         "It is not possible to register works outside the administrative period."
       );
@@ -55,7 +45,7 @@ class CreateWorkService {
 
     const calendarAlreadyExists = await calendarRepository.findOne({
       title,
-      date: dateTextFormatted,
+      date,
       extra: member,
       type
     });

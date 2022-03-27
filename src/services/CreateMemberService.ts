@@ -7,7 +7,7 @@ interface IMemberRequest {
   address: string;
   CEP: string;
   phone: string;
-  birthday: Date;
+  birthday: string;
   level: number;
 }
 

@@ -8,10 +8,18 @@ interface IPhilanthropyRequest {
   description: string;
   local: string;
   date: string;
+  type: string;
 }
 
 class UpdatePhilanthropyService {
-  async execute({ id, date, description, local, title }: IPhilanthropyRequest) {
+  async execute({
+    id,
+    date,
+    description,
+    local,
+    title,
+    type
+  }: IPhilanthropyRequest) {
     const calendarRepository = getCustomRepository(CalendarRepositories);
     const { dateInt, dateEnd } = await GetCurrentAdministrationDate();
 
@@ -27,12 +35,15 @@ class UpdatePhilanthropyService {
       );
     }
 
+    if (type != "philanthropy") {
+      throw new Error("Philanthropy type incorrect");
+    }
+
     await calendarRepository.update(id, {
       title: title || philanthropyToUpdate.title,
       description: description || philanthropyToUpdate.description,
       extra: local || philanthropyToUpdate.extra,
-      date: date || philanthropyToUpdate.date,
-      updated_at: new Date()
+      date: date || philanthropyToUpdate.date
     });
 
     const philanthropy = await calendarRepository.findOne(id);

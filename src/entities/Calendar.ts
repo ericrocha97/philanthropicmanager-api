@@ -20,7 +20,7 @@ class Calendar {
   extra: string;
 
   @Column()
-  date: Date;
+  date: string;
 
   @Column()
   description: string;

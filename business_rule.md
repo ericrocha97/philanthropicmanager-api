@@ -38,8 +38,8 @@
   - [x] Não é permitido cadastrar uma trabalho sem o tipo 'work'
   - [x] Não é permitido cadastrar uma trabalho fora do período da administração
   - [x] O usuário precisa estar autenticado na aplicação
-  - [ ] Deve ser possível alterar os trabalhos
-  - [ ] Deve ser possível remover os trabalhos por um administrador
+  - [x] Deve ser possível alterar os trabalhos
+  - [x] Deve ser possível remover os trabalhos por um administrador
   
 - Cadastro de Lançamentos Financeiros
   - [x] Não é permitido cadastrar um lançamento sem descrição
@@ -49,8 +49,8 @@
   - [x] Não é permitido cadastrar uma trabalho fora do período da administração
   - [x] O usuário precisa estar autenticado na aplicação
   - [X] Deve ser possível listar todos os lançamentos do período da administração ordenado por data
-  - [ ] Deve ser possível alterar os lançamentos
-  - [ ] Deve ser possível remover os lançamentos por um administrador
+  - [x] Deve ser possível alterar os lançamentos
+  - [x] Deve ser possível remover os lançamentos por um administrador
 
 - Cadastro de Preferencias da Entidade
   - [x] As preferências da entidade devem ser cadastradas por um administrador
