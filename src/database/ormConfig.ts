@@ -1,14 +1,24 @@
+import url from "url";
 import { ConnectionOptions } from "typeorm";
-import path from "path";
+const DATABASE_URL = process.env.DATABASE_URL;
+const db_url = url.parse(DATABASE_URL);
+const user = db_url.auth.substr(0, db_url.auth.indexOf(":"));
+const pass = db_url.auth.substr(
+  db_url.auth.indexOf(":") + 1,
+  db_url.auth.length
+);
+const host = db_url.hostname;
+const port = db_url.port;
+const db = db_url.path.slice(1);
 
 export default {
   name: "default",
-  host: process.env.DB_HOST,
+  host: host,
   type: "postgres",
-  port: Number(process.env.DB_PORT),
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
+  port: Number(port),
+  username: user,
+  password: pass,
+  database: db,
   entities: ["src/entities/*.ts"],
   migrations: ["src/database/migrations/*.ts"],
   cli: {
