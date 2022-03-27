@@ -10,6 +10,10 @@ export async function GetCurrentAdministrationDate() {
     }
   });
 
+  if (!administration) {
+    throw new Error("Could not find any valid administration.");
+  }
+
   const [semester, year] = administration.split("/");
 
   if (semester === "1") {
