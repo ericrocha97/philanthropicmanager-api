@@ -2,6 +2,7 @@ import "reflect-metadata";
 import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
+import cors from "cors";
 
 import { router } from "./routes";
 
@@ -29,9 +30,11 @@ app.use(
   }
 );
 
-app.listen(process.env.PORT || 3000, () => {
+app.use(cors());
+
+app.listen(process.env.PORT || 3333, () => {
   console.log(
-    `Server is running on port ${process.env.PORT || 3000} at ${
+    `Server is running on port ${process.env.PORT || 3333} at ${
       process.env.NODE_ENV
     }`
   );
