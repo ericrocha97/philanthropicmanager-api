@@ -10,11 +10,7 @@ class GetFinancialEntryService {
     const financialEntryRepository = getCustomRepository(
       FinancialEntriesRepositories
     );
-    const financialEntry = await financialEntryRepository.find({
-      where: {
-        id
-      }
-    });
+    const financialEntry = await financialEntryRepository.findOne(id);
     return financialEntry;
   }
 }
