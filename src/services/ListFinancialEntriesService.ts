@@ -1,6 +1,6 @@
 import { Between, getCustomRepository } from "typeorm";
 import { FinancialEntriesRepositories } from "../repositories/FinancialEntriesRepositories";
-import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDate";
+import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdministrationDate";
 
 class ListFinancialEntriesService {
   async execute() {

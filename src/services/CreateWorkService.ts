@@ -1,7 +1,7 @@
 import { getCustomRepository, getRepository } from "typeorm";
 import { Member } from "../entities/Member";
 import { CalendarRepositories } from "../repositories/CalendarRepositories";
-import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDate";
+import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdministrationDate";
 
 interface IWorkRequest {
   title: string;

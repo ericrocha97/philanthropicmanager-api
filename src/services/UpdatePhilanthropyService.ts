@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { CalendarRepositories } from "../repositories/CalendarRepositories";
-import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDate";
+import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdministrationDate";
 
 interface IPhilanthropyRequest {
   id: string;

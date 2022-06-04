@@ -7,6 +7,7 @@ import { CreatePhilanthropyController } from "./controllers/CreatePhilanthropyCo
 import { CreateUserController } from "./controllers/CreateUserController";
 import { CreateWorkController } from "./controllers/CreateWorkController";
 import { DisableMemberController } from "./controllers/DisableMemberController";
+import { GetFinancialEntryController } from "./controllers/GetFinancialEntryController";
 import { ListCalendarController } from "./controllers/ListCalendarController";
 import { ListFinancialEntriesController } from "./controllers/ListFinancialEntriesController";
 import { ListMemberController } from "./controllers/ListMemberController";
@@ -41,6 +42,7 @@ const updateWorkController = new UpdateWorkController();
 const removeWorkController = new RemoveWorkController();
 const updateFinancialEntriesController = new UpdateFinancialEntriesController();
 const removeFinancialEntriesController = new RemoveFinancialEntriesController();
+const getFinancialEntryController = new GetFinancialEntryController();
 
 router.post(
   "/philanthropies",
@@ -131,6 +133,13 @@ router.delete(
   ensureAuthenticated,
   ensureAdmin,
   removeFinancialEntriesController.handle
+);
+
+router.get(
+  "/financial-entries/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  getFinancialEntryController.handle
 );
 
 export { router };

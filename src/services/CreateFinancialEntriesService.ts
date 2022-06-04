@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { FinancialEntriesRepositories } from "../repositories/FinancialEntriesRepositories";
-import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdminstrationDate";
+import { GetCurrentAdministrationDate } from "../utils/GetCurrentAdministrationDate";
 
 interface IFinancialEntriesRequest {
   description: string;
